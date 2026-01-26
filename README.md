@@ -119,6 +119,10 @@ pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple
 --mode 控制模式（only\_real,only\_sim）  
 --end 末端执行器类型(None,gripper,teach)  
 检查机械臂是否连接并检测当前已连接机械臂的端口  
+注意：串口权限问题，linux更改权限，windows下需要安装对应的驱动（ch340）
+```plain&#x20;text
+sudo chmod 777 /dev/ttyUSB0
+```
 ```plain&#x20;text
 python3 check_arm.py
 ```
