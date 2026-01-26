@@ -73,7 +73,8 @@ def main():
         )
         arm.enable()
         while True:
-            arm.joint_control(position)
+            print(position)
+            arm.joint_control(position[:6])
             arm.refresh()
             time.sleep(0.01)
     except KeyboardInterrupt:

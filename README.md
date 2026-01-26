@@ -44,7 +44,7 @@ conda activate S1
 
 ```plain&#x20;text
 git clone https://github.com/YHRG-Robotics/S1_SDK.git
-cd S1_arm/S1_SDK
+cd S1_SDK
 ```
 
 ### 2.3安装项目及依赖
@@ -73,7 +73,6 @@ pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple
 .
 │  .gitignore
 │  readme.md ------------------------------------------#说明文档
-│  version_updata.md ----------------------------------# 版本更新日志
 │
 ├─doc
 │  │  conda_install.md --------------------------------# conda环境安装
