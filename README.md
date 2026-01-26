@@ -114,7 +114,46 @@ pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple
 * examples文件夹：
 
 包含机械臂各个功能使用示例
-
+## 参数说明  
+--dev 设备端口号(linux一般为/dev/ttyUSBx,windows一般为COMx)
+--mode 控制模式（only\_real,only\_sim）
+--end 末端执行器类型(None,gripper,teach)
+检查机械臂是否连接并检测当前已连接机械臂的端口  
+```plain&#x20;text
+python3 check_arm.py
+```
+自碰撞检测示例
+```plain&#x20;text
+python3 collision.py  --dev can0
+```
+失能示例
+```plain&#x20;text
+python3 disable.py  --dev can0
+```
+使能示例
+```plain&#x20;text
+python3 enable.py  --dev can0
+```
+重力补偿示例
+```plain&#x20;text
+python3 gravity.py  --dev can0
+```
+键盘控制末端位姿示例
+```plain&#x20;text
+python3 keyborad_end_effect.py  --dev can0
+```
+键盘控制关节角度示例
+```plain&#x20;text
+python3 keyborad_joint.py  --dev can0
+```
+读取机械臂当前位置示例
+```plain&#x20;text
+python3 read_pos.py  --dev can0
+```
+遥操作示例
+```plain&#x20;text
+python3 teleop_demo.py  --master_dev can0 --slaver_dev can1  
+```
 * hardware文件夹
 
 包含电机驱动，各功能的具体实现
