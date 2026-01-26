@@ -115,9 +115,9 @@ pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 包含机械臂各个功能使用示例
 ## 参数说明  
---dev 设备端口号(linux一般为/dev/ttyUSBx,windows一般为COMx)
---mode 控制模式（only\_real,only\_sim）
---end 末端执行器类型(None,gripper,teach)
+--dev 设备端口号(linux一般为/dev/ttyUSBx,windows一般为COMx)  
+--mode 控制模式（only\_real,only\_sim）  
+--end 末端执行器类型(None,gripper,teach)  
 检查机械臂是否连接并检测当前已连接机械臂的端口  
 ```plain&#x20;text
 python3 check_arm.py
