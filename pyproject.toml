@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools >= 61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "S1_SDK"
+version = "0.1.0"
+description = "SDK for Theseus arm S1 SDK"
+authors = [{name = "Your Name", email = "you@example.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "mujoco==3.4.0",
+    "urdfpy==0.0.4",
+    "networkx>=3.0", 
+    "sympy",
+    "python-can",
+    "pyserial",
+    "pynput"
+]
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["S1_SDK"]
+[tool.setuptools.package-data]
+"S1_SDK" = ["**/*"]
