@@ -59,8 +59,6 @@ class UartType(ComStrategy):
             else:
                 del self.uart_buffer[0]
     def recv(self, timeout: float = 0.1) -> bytes:
-        original_timeout = self.bus.timeout
-        self.bus.timeout = timeout
 
         try:
             data = self.bus.read_all()   
@@ -72,7 +70,7 @@ class UartType(ComStrategy):
             frame = self.data_buffer.pop(0)
             return ReturnFrame(frame[0]&0x0f,frame[1:])
         finally:
-            self.bus.timeout = original_timeout
+            pass
     def close(self):
         """关闭串口"""
         if self.bus is not None and self.bus.is_open:

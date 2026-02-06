@@ -87,7 +87,7 @@ class S1_arm:
         MIT关节控制,控制六个关节
         :param pos: 六个关节的位置,列表形式,每个元素为一个关节的位置
         """
-        if len(pos) != 6 or pos == None:
+        if len(pos) > 6 or pos == None:
             return False
         for i in range(len(pos)):
             pos[i] = clamp(pos[i],range_checker[i])
@@ -108,7 +108,7 @@ class S1_arm:
         关节控制,控制六个关节
         :param pos: 六个关节的位置,列表形式,每个元素为一个关节的位置
         """
-        if pos is None or len(pos) != 6:
+        if pos is None or len(pos) > 6:
             return False
         # for i in range(len(pos)):
         #     pos[i] = clamp(pos[i],range_checker[i])
