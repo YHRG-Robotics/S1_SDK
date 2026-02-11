@@ -147,7 +147,7 @@ class KDLRobotSolver:
         # 欧拉角
         roll, pitch, yaw = frame.M.GetRPY()
 
-        return (x+0.008, y+0.013, z, roll-1.57, pitch, yaw+1.57)
+        return (x, y, z, roll-1.57, pitch, yaw+1.57)
 
     def ik_quat(self, target_pose, q_init=None):
         """
