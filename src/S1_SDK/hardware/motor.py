@@ -191,12 +191,11 @@ class Motor_Pro:
             if self.motors[i].mode != 2:
                 self.switchmode(i,2) 
                 # print(f"切换到位置速度模式 {self.motor_id[i]}")
-                continue
-            else:
+
                 # print(f"执行位置速度控制 {self.motor_id[i]}")
-                self.send_cmd_flag[i] = 1
-                self.send_cmd_timestamp[i] = time.time()
-                res.append(self.motors[i].control_pos_vel(pos[i],20))
+            self.send_cmd_flag[i] = 1
+            self.send_cmd_timestamp[i] = time.time()
+            res.append(self.motors[i].control_pos_vel(pos[i],20))
         self.send_commands(res)
         
     def control_foc(self,tau):
