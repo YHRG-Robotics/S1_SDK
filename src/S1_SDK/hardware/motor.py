@@ -166,7 +166,7 @@ class Motor_Pro:
         res = []
         for i in range(len(self.motor_id)):
             if self.send_cmd_flag[i] == 1:
-                self.send_cmd_flag[i] == 0
+                self.send_cmd_flag[i] = 0
                 continue
             self.send_cmd_timestamp[i] = time.time()
             res.append(self.motors[i].refresh_motor_status())
