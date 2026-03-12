@@ -26,7 +26,7 @@ SDK 支持：
 
 使用 conda创建Python 3.10 虚拟环境，，conda的安装步骤见：
 
-[miniconda安装](http://git.sylas.site:8081/Theseus/S1_SDK/src/branch/main/doc/conda_install.md)
+[miniconda安装](https://github.com/YHRG-Robotics/S1_SDK/blob/main/doc/conda_install.md)
 
 ```plain&#x20;text
 conda create -y -n S1 python=3.10
@@ -59,7 +59,7 @@ pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 详细安装步骤见：
 
-[运动学解算PyKDL安装](http://git.sylas.site:8081/Theseus/S1_SDK/src/branch/main/doc/kdl_install.md)
+[运动学解算PyKDL安装](https://github.com/YHRG-Robotics/S1_SDK/blob/main/doc/kdl_install.md)
 
 注意：
 
