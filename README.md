@@ -1,3 +1,4 @@
+# 该版本停止维护，移步新版本[miniconda安装](https://github.com/YHRG-Robotics/S1_SDK_V2)
 ## 1.  简介
 
 S1 机械臂 SDK 提供了控制机械臂运动、读取状态、执行正逆运动学等功能的 Python API。开发者可以使用本 SDK 轻松实现关节控制、末端控制、示教、碰撞检测等功能。
