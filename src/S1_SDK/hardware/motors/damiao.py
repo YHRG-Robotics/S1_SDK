@@ -132,9 +132,10 @@ class Damiao(MotorStrategy):
             x = min
         elif x > max:
             x = max
+        return x
 
     def __float_to_uint(self, x: float, x_min: float, x_max: float, bits):
-        self.__LIMIT_MIN_MAX(x, x_min, x_max)
+        x = self.__LIMIT_MIN_MAX(x, x_min, x_max)
         span = x_max - x_min
         data_norm = (x - x_min) / span
         return np.uint16(data_norm * ((1 << bits) - 1))

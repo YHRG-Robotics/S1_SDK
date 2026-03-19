@@ -166,7 +166,7 @@ class Motor_Pro:
         res = []
         for i in range(len(self.motor_id)):
             if self.send_cmd_flag[i] == 1:
-                self.send_cmd_flag[i] == 0
+                self.send_cmd_flag[i] = 0
                 continue
             self.send_cmd_timestamp[i] = time.time()
             res.append(self.motors[i].refresh_motor_status())
@@ -304,7 +304,7 @@ class Motor_Pro:
             if self.motors[-1].mode != 1:
                 self.switchmode(6,1)
             else:
-                tau = tau/math.cos(math.fabs(self.pos[-1] + math.degrees(30))) 
+                tau = tau/math.cos(math.fabs(self.pos[-1] + math.radians(30))) 
                 if self.spd[-1]>0.5:
                     tau = -tau/3
                 if self.pos[-1] > -1.0:
@@ -334,6 +334,7 @@ class Motor_Pro:
             self.error[i] = tar_pos[i] - self.pos[i]
             if abs(self.error[i]) > 0.02:
                 self.sum_error[i] += self.error[i]
+                self.sum_error[i] = max(-10.0, min(10.0, self.sum_error[i]))
             self.fix_tau[i] = self.pid_param[i][0]*self.error[i] + self.pid_param[i][1]*self.sum_error[i] - self.pid_param[i][2]*self.last_error[i]
             self.last_error[i] = self.error[i]
         return self.fix_tau
