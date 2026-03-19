@@ -267,6 +267,9 @@ class S1_arm:
         :param return_tau: 是否返回重力补偿力矩,默认False
         :return: 如果return_tau为True,返回当前位置下重力补偿应输出力矩列表,否则直接控制电机
         """
+        # 如果作为单独的重力补偿控制(不return_tau)，需要主动刷新电机状态
+        if not return_tau and self.strategy.needs_motor():
+            self.motor.refresh_motor_status()
         qpos = self.get_pos()
         # qpos[2] = qpos[2]/4
         tau = [0.0]*6
